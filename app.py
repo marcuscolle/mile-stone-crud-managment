@@ -13,6 +13,7 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)   
 
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -21,6 +22,21 @@ def index():
 @app.route('/products')
 def products():
     return render_template("products.html", products=mongo.db.products.find())
+
+
+@app.route('/add_product')
+def add_product():
+    return render_template('addproduct.html', products=mongo.db.products.find())
+
+
+@app.route('/insert_product', methods=['POST'])
+def insert_product():
+    products = mongo.db.products
+    products.insert_one(request.form.to_dict())
+    return redirect(url_for('products'))
+
+
+
 
 
 if __name__ == '__main__':
