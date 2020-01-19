@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+
+      {% for product in products %}
+       <div>
+          <ul>             
+            <li>Ref_number - {{product.ref_number}}</li>                      
+            <li>Name - {{product.name}}</li>                        
+            <li>Size - {{product.size}}</li>                        
+            <li>Unit Price - £={{product.unity_price}}</li>                        
+            <li>Sale Price - £={{product.sale_price}}</li>
+
+       {% endfor %}
+          </ul>
+       </div>
+    
+    {% endblock %}
