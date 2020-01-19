@@ -1,18 +1,59 @@
 {% extends 'base.html' %}
 
-    {% block content %}
+{% block content %}
 
-      {% for product in products %}
-       <div>
-          <ul>             
-            <li>Ref_number - {{product.ref_number}}</li>                      
-            <li>Name - {{product.name}}</li>                        
-            <li>Size - {{product.size}}</li>                        
-            <li>Unit Price - £={{product.unity_price}}</li>                        
-            <li>Sale Price - £={{product.sale_price}}</li>
+<!----no caso de nao entrar o style.css colocar o style no html Code-->
+<div class="prod">Product Management</div>
 
-       {% endfor %}
-          </ul>
-       </div>
-    
-    {% endblock %}
+
+<button class="btn waves-effect green" type="submit" name="action">Add New Product
+    <i class="material-icons right">folder_open</i>
+</button>
+
+<table class="striped responsive-table">
+	<thead>
+		<tr>
+			<th>Ref_number</th>
+			<th>Name</th>
+			<th>Color</th>
+			<th>Size</th>
+			<th>Unit Price</th>
+			<th>Sale Price</th>
+			<th>Edit Products</th>
+			<th>Delete Products</th>
+
+		</tr>
+
+	</thead>
+
+	<tbody>
+		
+        {% for product in products %}
+        <tr>
+
+        	<td>{{ product.ref_number }}</td>
+			<td>{{ product.name }}</td>
+			<td>{{ product.color }}</td>
+			<td>{{ product.size }}</td>
+			<td> £={{ product.unity_price }}</td>
+			<td> £={{ product.sale_price }}</td>
+			<td>  <a class="btn-floating btn-medium waves-effect waves-light blue"><i class="material-icons">edit</i></a>
+			</td>
+			<td>  <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete_sweep</i></a>
+			</td>
+        
+
+		</tr>
+        {% endfor %}
+
+
+
+
+	</tbody>
+</table>
+
+
+
+
+
+{% endblock %}
