@@ -11,7 +11,7 @@
 
 
 <div class="row">
-    <a href="{{url_for('add_product')}}" class="waves-effect waves-light btn green">
+    <a href="{{ url_for('add_product') }}" class="waves-effect waves-light btn green">
         <i class="material-icons right">folder_open</i>Add New Product
     </a>
 </div>
@@ -41,11 +41,13 @@
 			<td>{{ product.name }}</td>
 			<td>{{ product.color }}</td>
 			<td>{{ product.size }}</td>
-			<td> £={{ product.unity_price }}</td>
+			<td> £={{ product.unit_price }}</td>
 			<td> £={{ product.sale_price }}</td>
 			<td>  <a class="btn-floating btn-medium waves-effect waves-light blue"><i class="material-icons">edit</i></a>
 			</td>
-			<td>  <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete_sweep</i></a>
+
+            <!------------should use product_id and product._id 'cuz we are inside the for loop saying product in products list------->
+			<td>  <a href="{{ url_for('delete_product', product_id=product._id) }}" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete_sweep</i></a>
 			</td>
         
 
