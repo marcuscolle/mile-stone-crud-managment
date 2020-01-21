@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="prod" style="font-size: 60px; 
+                        text-align: center; 
+                        padding-bottom: 30px;     
+                        font-family: cursive;
+                        font-style: oblique;">Edit a Customer</div>
+
+<div class="row">
+	<form action="{{ url_for('update_client', sale_id=sale._id) }}" method="POST" class="col s12">
+
+
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">border_color</i>
+				<textarea name="client_ref" id="client_ref" class="materialize-textarea">{{ sale.client_ref }}</textarea>
+				<label for="icon_prefix">Customer Ref.</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">border_color</i>
+				<input id="name" name="name" type="text" class="validate" value="{{sale.name}}">
+				<label for="icon_prefix">Name</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">border_color</i>
+				<input id="phone" name="phone" type="text" class="validate" value="{{sale.phone}}">
+				<label for="icon_prefix">Phone</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">border_color</i>
+				<input id="email" name="email" type="text" class="validate" value="{{sale.email}}">
+				<label for="icon_prefix">E-mail</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">border_color</i>
+				<input id="address" name="address" type="text" class="validate" value="{{sale.address}}">
+				<label for="icon_prefix">Address</label>
+			</div>
+		</div>
+
+
+
+		<button class="btn waves-effect green" type="submit" name="action">Edit a Customer
+            <i class="material-icons right">spellcheck</i>
+        </button>
+
+	</form>
+</div>
+
+{% endblock %}

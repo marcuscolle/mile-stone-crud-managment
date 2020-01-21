@@ -23,8 +23,8 @@
 			<th>Stock Inward</th>
 			<th>Stock Outward</th>
 			<th>Stock Total</th>
-            <th>Edit Products</th>
-			<th>Delete Products</th>
+            <th>Edit Stock</th>
+			<th>Delete Stock</th>
 			
 
 		</tr>
@@ -43,11 +43,12 @@
 			
 
 
-			<td>  <a href="#" class="btn-floating btn-medium waves-effect waves-light blue"><i class="material-icons">edit</i></a>
+			<td>  <a href="{{ url_for('edit_stock', items_id=items._id) }}" class="btn-floating btn-medium waves-effect waves-light blue"><i class="material-icons">edit</i></a>
 			</td>
 
             <!------------should use product_id and product._id 'cuz we are inside the for loop saying product in products list------->
-			<td>  <a href="#" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete_sweep</i></a>
+            <!-----------------------------DELETE A STOCK PRODUCT---------------->
+			<td> <a href="{{ url_for('delete_stock', items_id=items._id) }}" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete_sweep</i></a>
 			</td>
         
 

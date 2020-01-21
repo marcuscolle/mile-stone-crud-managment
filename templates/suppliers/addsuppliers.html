@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!----no caso de nao entrar o style.css colocar o style no html Code-->
+<div class="prod" style="font-size: 60px; 
+                        text-align: center; 
+                        padding-bottom: 30px;     
+                        font-family: cursive;
+                        font-style: oblique;">Add a Supplier</div>
+
+<div class="row">
+	<form action="{{ url_for('insert_supplier') }}" method="POST" class="col s12">
+
+		<!-----------------ADD CUSTOMER REF-------------->
+		<div class="row">
+			<div class="input-field col s12">
+
+				<input placeholder="Insert Supplier" id="sup_ref" name="sup_ref" type="text" class="validate">
+				<label for="sup_ref">Supplier Ref.</label>
+			</div>
+		</div>
+
+		<!-----------------------ADD NAME --------------->
+		<div class="row">
+			<div class="input-field col s12">
+
+				<input placeholder="Insert Name " id="name" name="name" type="text" class="validate">
+				<label for="name">Name</label>
+			</div>
+		</div>
+
+		<!-----------------ADD PHONE---------------------->
+		<div class="row">
+			<div class="input-field col s12">
+
+				<input placeholder="Insert Phone " id="phone" name="phone" type="text" class="validate">
+				<label for="phone">Phone</label>
+			</div>
+		</div>
+
+        <!--------------ADD EMAIL-------------------------->
+
+        <div class="row">
+			<div class="input-field col s12">
+
+				<input placeholder="Insert Email" id="email" name="email" type="text" class="validate">
+				<label for="email">Email</label>
+			</div>
+		</div>
+
+
+        <!-------------------ADD ADDRESS--------------------->
+
+        <div class="row">
+			<div class="input-field col s12">
+
+				<input placeholder="Insert Address" id="address" name="address" type="text" class="validate">
+				<label for="address">Address</label>
+			</div>
+		</div>
+
+
+
+
+
+	<!--------------------------Button to add to stockt------------------------------->
+		<button class="btn waves-effect green" type="submit" name="action">Add a Supplier
+            <i class="material-icons right">spellcheck</i>
+        </button>
+
+
+	</form>
+</div>
+
+
+{% endblock %}

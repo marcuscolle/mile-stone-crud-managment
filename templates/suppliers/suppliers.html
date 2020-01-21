@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!----no caso de nao entrar o style.css colocar o style no html Code-->
+<div class="container" style="font-size: 60px; 
+                        text-align: center; 
+                        padding-bottom: 30px;     
+                        font-family: cursive;
+                        font-style: oblique;">Supplier Management</div>
+
+
+<div class="row">
+    <a href="{{ url_for('add_supplier') }}" class="waves-effect waves-light btn green">
+        <i class="material-icons right">clear_all</i>Add a Supplier
+    </a>
+</div>
+
+<table class="striped responsive-table">
+	<thead>
+		<tr>
+			<th>Supplier Ref.</th>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Email</th>
+            <th>Address</th>
+            <th>Edit a Supplier</th>
+			<th>Delete a Supplier</th>
+			
+
+		</tr>
+
+	</thead>
+
+	<tbody>
+		
+        {% for buy in supplier %}
+        <tr>
+           
+        	<td>{{ buy.sup_ref }}</td>           		
+            <td>{{ buy.name }}</td>
+            <td>{{ buy.phone }}</td>
+			<td>{{ buy.email }}</td>
+			<td>{{ buy.address }}</td>
+
+
+			<td>  <a href="{{ url_for('edit_supplier', buy_id=buy._id) }}" class="btn-floating btn-medium waves-effect waves-light blue"><i class="material-icons">edit</i></a>
+			</td>
+
+            <!------------should use product_id and product._id 'cuz we are inside the for loop saying product in products list------->
+            <!-----------------------------DELETE A STOCK PRODUCT---------------->
+			<td> <a href="{{ url_for('delete_supplier', buy_id=buy._id) }}" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete_sweep</i></a>
+			</td>
+        
+
+		</tr>
+        {% endfor %}
+
+
+
+
+	</tbody>
+</table>
+
+
+
+
+
+{% endblock %}

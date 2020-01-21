@@ -1,0 +1,56 @@
+{% extends 'base.html'%} 
+
+{% block content %}
+
+<div class="prod" style="font-size: 60px; 
+                        text-align: center; 
+                        padding-bottom: 30px;     
+                        font-family: cursive;
+                        font-style: oblique;">Edit Stock</div>
+
+<div class="row">
+    <form action="{{ url_for('update_stock', items_id=items._id) }}" method="POST" class="col s12">
+        
+      
+         <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">border_color</i>
+                <textarea name="ref_number" id="ref_number" class="materialize-textarea">{{ items.ref_number }}</textarea>
+                <label for="icon_prefix">Ref. Number</label>
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">border_color</i>
+                <input id="stock_inward" name="stock_inward" type="text" class="validate" value="{{items.stock_inward}}">
+                <label for="icon_prefix">Stock Inward</label>
+            </div>
+        </div>       
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">border_color</i>
+                <input id="stock_outward" name="stock_outward" type="text" class="validate" value="{{items.stock_outward}}">
+                <label for="icon_prefix">Stock Outward</label>
+            </div>
+        </div>    
+    
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">border_color</i>
+                <input id="stock_total" name="stock_total" type="text" class="validate" value="{{items.stock_total}}">
+                <label for="icon_prefix">Stock Total</label>
+            </div>
+        </div> 
+
+
+
+       <button class="btn waves-effect green" type="submit" name="action">Edit Stock
+            <i class="material-icons right">spellcheck</i>
+        </button>  
+
+    </form>
+</div>
+
+{% endblock %}
