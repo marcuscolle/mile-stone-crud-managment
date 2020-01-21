@@ -23,24 +23,31 @@
 
 <body>
 
-
 	<nav>
 		<div class="nav-wrapper" style="background-color: black;">
-
-			<a href="{{url_for('index')}}" class="brand-logo right">Management System</a>
+			<a href="{{url_for('index')}}" class="brand-logo">Management System</a>
+			<a href="{{url_for('index')}}" data-activates="mobile-demo"
+				class="button-collapse"><i class="material-icons">menu</i></a>
 			
-            <ul id="nav-mobile" class="left">
+            <ul class="right hide-on-med-and-down">
 				<li><a href="#!">Invoice</a></li>
 				<li><a href="{{url_for('products')}}">Products</a></li>
 				<li><a href="{{url_for('stock')}}">Stock</a></li>
 				<li><a href="{{url_for('client')}}">Customer</a></li>
 				<li><a href="{{url_for('supplier')}}">Suppliers</a></li>
 			</ul>
-
-			
+			<ul class="side-nav" id="mobile-demo">
+				<li><a href="#!">Invoice</a></li>
+				<li><a href="{{url_for('products')}}">Products</a></li>
+				<li><a href="{{url_for('stock')}}">Stock</a></li>
+				<li><a href="{{url_for('client')}}">Customer</a></li>
+				<li><a href="{{url_for('supplier')}}">Suppliers</a></li>
+			</ul>
 		</div>
-
 	</nav>
+
+
+
 
 
 
@@ -73,3 +80,18 @@
 </body>
 
 </html>
+
+
+
+<!---------------------------------
+
+
+<a href="{{url_for('index')}}" class="brand-logo right hide-on-small-only">Management System</a>
+						<li><a href="#!">Invoice</a></li>
+						<li><a href="{{url_for('products')}}">Products</a></li>
+						<li><a href="{{url_for('stock')}}">Stock</a></li>
+						<li><a href="{{url_for('client')}}">Customer</a></li>
+						<li><a href="{{url_for('supplier')}}">Suppliers</a></li>
+
+
+-------------------------------------->
