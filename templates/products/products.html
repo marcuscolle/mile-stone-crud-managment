@@ -3,7 +3,7 @@
 {% block content %}
 
 <!----no caso de nao entrar o style.css colocar o style no html Code-->
-<div class="prod" style="font-size: 60px; 
+<div class="container" style="font-size: 60px; 
                         text-align: center; 
                         padding-bottom: 30px;     
                         font-family: cursive;
@@ -12,7 +12,7 @@
 
 <div class="row">
     <a href="{{ url_for('add_product') }}" class="waves-effect waves-light btn green">
-        <i class="material-icons right">folder_open</i>Add New Product
+        <i class="material-icons right">clear_all</i>Add New Product
     </a>
 </div>
 
@@ -43,7 +43,9 @@
 			<td>{{ product.size }}</td>
 			<td> £={{ product.unit_price }}</td>
 			<td> £={{ product.sale_price }}</td>
-			<td>  <a class="btn-floating btn-medium waves-effect waves-light blue"><i class="material-icons">edit</i></a>
+
+
+			<td>  <a href="{{ url_for('edit_product', product_id=product._id) }}" class="btn-floating btn-medium waves-effect waves-light blue"><i class="material-icons">edit</i></a>
 			</td>
 
             <!------------should use product_id and product._id 'cuz we are inside the for loop saying product in products list------->

@@ -24,31 +24,36 @@
 <body>
 
 
-  <nav>
-    <div class="nav-wrapper" style="background-color: black;">
-      
-      <a href="{{url_for('index')}}" class="brand-logo right">Management System</a>
-      
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="#!">Invoice</a></li>
-			<li><a href="{{url_for('products')}}">Products</a></li>
-			<li><a href="#!">Stock</a></li>
-			<li><a href="#!">Clients</a></li>
-			<li><a href="#!">Suppliers</a></li>
-      </ul>
-    </div>
-  </nav>
+	<nav>
+		<div class="nav-wrapper" style="background-color: black;">
+
+			<a href="{{url_for('index')}}" class="brand-logo right">Management System</a>
+			
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+				<li><a href="#!">Invoice</a></li>
+				<li><a href="{{url_for('products')}}">Products</a></li>
+				<li><a href="{{url_for('stock')}}">Stock</a></li>
+				<li><a href="#!">Clients</a></li>
+				<li><a href="#!">Suppliers</a></li>
+			</ul>
+
+			
+		</div>
+
+	</nav>
+
+
 
 	<div class="container row">
 
 
-		
-			{% block content %}
-			{% endblock %}
 
-		</div>
+		{% block content %}
+		{% endblock %}
 
-      
+	</div>
+
+
 	</div>
 
 
@@ -56,15 +61,15 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-     
-     <script type="text/javascript">
-     
-     $(document).ready(function() {
-     
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+            $('.sidenav').sidenav();
+            $(".button-collapse").sideNav();
 
      });
     
-     </script>
+	</script>
 
 </body>
 

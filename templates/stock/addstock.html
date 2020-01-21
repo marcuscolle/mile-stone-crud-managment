@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!----no caso de nao entrar o style.css colocar o style no html Code-->
+<div class="prod" style="font-size: 60px; 
+                        text-align: center; 
+                        padding-bottom: 30px;     
+                        font-family: cursive;
+                        font-style: oblique;">Stock a Procduct</div>
+
+<div class="row">
+	<form action="{{ url_for('insert_stock') }}" method="POST" class="col s12">
+
+		<!-----------------ADD REF_NUMBER-------------->
+		<div class="row">
+			<div class="input-field col s12">
+				
+               <input placeholder="Insert a Ref_Number" id="ref_number" name="ref_number" type="text" class="validate">
+               <label for="ref_number">Product Reference number</label>
+			</div>
+		</div>
+
+		<!-----------------------ADD STOCK QUANTITY INWARD --------------->
+		<div class="row">
+			<div class="input-field col s12">
+                          
+				<input placeholder="Insert " id="stock_inward" name="stock_inward" type="text" class="validate">
+				<label for="name">Stock Inward</label>
+			</div>
+		</div>
+
+          
+
+        <!-----------------Button to add to stockt------------------------------->
+		<button class="btn waves-effect green" type="submit" name="action">Add to Stock
+            <i class="material-icons right">spellcheck</i>
+        </button>
+
+
+	</form>
+</div>
+  
+
+{% endblock %}
+

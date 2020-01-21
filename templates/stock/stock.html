@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!----no caso de nao entrar o style.css colocar o style no html Code-->
+<div class="container" style="font-size: 60px; 
+                        text-align: center; 
+                        padding-bottom: 30px;     
+                        font-family: cursive;
+                        font-style: oblique;">Stock Management</div>
+
+
+<div class="row">
+    <a href="{{ url_for('add_stock') }}" class="waves-effect waves-light btn green">
+        <i class="material-icons right">clear_all</i>Add to Stock
+    </a>
+</div>
+
+<table class="striped responsive-table">
+	<thead>
+		<tr>
+			<th>Ref. Number</th>
+			<th>Stock Inward</th>
+			<th>Stock Outward</th>
+			<th>Stock Total</th>
+            <th>Edit Products</th>
+			<th>Delete Products</th>
+			
+
+		</tr>
+
+	</thead>
+
+	<tbody>
+		
+        {% for items in stock %}
+        <tr>
+           
+        	<td>{{ items.ref_number }}</td>           		
+            <td>{{ items.stock_inward }}</td>
+            <td>{{ items.stock_outward }}</td>
+			<td>{{ items.stock_total }}</td>
+			
+
+
+			<td>  <a href="#" class="btn-floating btn-medium waves-effect waves-light blue"><i class="material-icons">edit</i></a>
+			</td>
+
+            <!------------should use product_id and product._id 'cuz we are inside the for loop saying product in products list------->
+			<td>  <a href="#" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete_sweep</i></a>
+			</td>
+        
+
+		</tr>
+        {% endfor %}
+
+
+
+
+	</tbody>
+</table>
+
+
+
+
+
+{% endblock %}
