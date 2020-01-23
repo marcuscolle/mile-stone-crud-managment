@@ -115,7 +115,10 @@ def update_stock(items_id):
                                               'stock_inward': request.form.get('stock_inward'),
                                               'stock_outward': request.form.get('stock_outward'),
                                               'stock_total': request.form.get('stock_total')
+                                              
     })
+
+    
 
     return redirect(url_for('stock'))
 
@@ -221,7 +224,32 @@ def update_supplier(buy_id):
 
 
 
+#-------------------------INVOICE----------------------------------------
+
+@app.route('/invoice')
+def invoice():
+    return render_template("invoice/invoice.html", invoice=mongo.db.invoice.find())
+
+# route to add a CLIENT / this will open an new web window 
+
+@app.route('/add_invoice')
+def add_invoice():
+    return render_template('invoice/addinvoice.html', invoice=mongo.db.invoice.find())
+
+@app.route('/edit_invoice/<money>')
+def edit_invoice(money):
+    invoice = mongo.db.invoice.find_one({"_id": ObjectId(money)})
+    return render_template('invoice/editinvoice.html', money=invoice)
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
+
+
+

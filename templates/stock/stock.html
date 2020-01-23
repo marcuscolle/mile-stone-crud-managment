@@ -3,7 +3,7 @@
 {% block content %}
 
 <!----no caso de nao entrar o style.css colocar o style no html Code-->
-<div class="container" style="font-size: 60px; 
+<div class="container" style="font-size: 40px; 
                         text-align: center; 
                         padding-bottom: 30px;     
                         font-family: cursive;
@@ -35,8 +35,8 @@
 		
         {% for items in stock %}
         <tr>
-           
-        	<td>{{ items.ref_number }}</td>           		
+            
+        	<td>{{ items.ref_number }}</td>
             <td>{{ items.stock_inward }}</td>
             <td>{{ items.stock_outward }}</td>
 			<td>{{ items.stock_total }}</td>
