@@ -3,11 +3,7 @@
 {% block content %}
 
 <!----no caso de nao entrar o style.css colocar o style no html Code-->
-<div class="prod" style="font-size: 40px; 
-                        text-align: center; 
-                        padding-bottom: 30px;     
-                        font-family: cursive;
-                        font-style: oblique;">Add Product</div>
+<div class="prod">Add Product</div>
 
 <div class="row">
 	<form action="{{ url_for('insert_product') }}" method="POST" class="col s12">

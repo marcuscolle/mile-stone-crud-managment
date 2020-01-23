@@ -2,11 +2,7 @@
 
 {% block content %}
 
-<div class="prod" style="font-size: 60px; 
-                        text-align: center; 
-                        padding-bottom: 30px;     
-                        font-family: cursive;
-                        font-style: oblique;">Edit a Customer</div>
+<div class="prod">Edit a Customer</div>
 
 <div class="row">
 	<form action="{{ url_for('update_client', sale_id=sale._id) }}" method="POST" class="col s12">

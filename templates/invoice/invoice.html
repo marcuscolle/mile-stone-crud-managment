@@ -3,16 +3,12 @@
 {% block content %}
 
 <!----no caso de nao entrar o style.css colocar o style no html Code-->
-<div class="container" style="font-size: 40px; 
-                        text-align: center; 
-                        padding-bottom: 30px;     
-                        font-family: cursive;
-                        font-style: oblique;">Invoice</div>
+<div class="container prod">Invoice</div>
 
 
 <div class="row">
     <a href="{{ url_for('add_invoice') }}" class="waves-effect waves-light btn green">
-        <i class="material-icons right">clear_all</i>Add Invoice
+        <i class="material-icons right">clear_all</i>Create Invoice
     </a>
 </div>
 

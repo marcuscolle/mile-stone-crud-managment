@@ -3,11 +3,7 @@
 {% block content %}
 
 <!----no caso de nao entrar o style.css colocar o style no html Code-->
-<div class="container prod" style="font-size: 40px; 
-                        text-align: center; 
-                        padding-bottom: 30px;     
-                        font-family: cursive;
-                        font-style: oblique;">Product Management</div>
+<div class="container prod">Product Management</div>
 
 
 <div class="row">
@@ -17,16 +13,16 @@
 </div>
 
 <table class="striped responsive-table">
-	<thead  class="list">
-		<tr class="list">
-			<th class="list">Ref_number</th>
-			<th class="list">Name</th>
-			<th class="list">Color</th>
-			<th class="list">Size</th>
-			<th class="list">Unit Price</th>
-			<th class="list">Sale Price</th>
-			<th class="list">Edit Products</th>
-			<th class="list">Delete Products</th>
+	<thead>
+		<tr>
+			<th>Ref_number</th>
+			<th>Name</th>
+			<th>Color</th>
+			<th>Size</th>
+			<th>Unit Price</th>
+			<th>Sale Price</th>
+			<th>Edit Products</th>
+			<th>Delete Products</th>
 
 		</tr>
 
@@ -36,16 +32,16 @@
 		
         {% for product in products %}
         <tr>
-
+           
         	<td>{{ product.ref_number }}</td>
-			<td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
 			<td>{{ product.color }}</td>
 			<td>{{ product.size }}</td>
 			<td> £ = {{ product.unit_price }}</td>
 			<td> £ = {{ product.sale_price }}</td>
 
 
-			<td>  <a href="{{ url_for('edit_product', product_id=product._id) }}" class="btn-floating btn-medium waves-effect waves-light blue"><i class="material-icons">edit</i></a>
+			<td>  <a href="{{ url_for('edit_product', product_id=product._id) }}" class="btn-floating btn-medium waves-effect waves-light grey"><i class="material-icons">edit</i></a>
 			</td>
 
             <!------------should use product_id and product._id 'cuz we are inside the for loop saying product in products list------->

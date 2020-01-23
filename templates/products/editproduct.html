@@ -2,11 +2,7 @@
 
 {% block content %}
 
-<div style="font-size: 40px; 
-                        text-align: center; 
-                        padding-bottom: 30px;     
-                        font-family: cursive;
-                        font-style: oblique;">Edit a Product</div>
+<div class="prod">Edit a Product</div>
 
 <div class="row">
     <form action="{{ url_for('update_product', product_id=product._id) }}" method="POST" class="col s12">

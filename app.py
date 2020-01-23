@@ -118,7 +118,7 @@ def update_stock(items_id):
                                               
     })
 
-    
+   
 
     return redirect(url_for('stock'))
 
