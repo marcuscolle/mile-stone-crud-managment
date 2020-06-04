@@ -1,7 +1,7 @@
-# Code Institute
+# Management System 
 
-Welcome marcuscolle,
+This is a unfinished management system
+Crud based made with flask and mongoDB
 
-We have preinstalled all of the tools you need to get started.
 
-Happy coding!
+Marcus Colle
